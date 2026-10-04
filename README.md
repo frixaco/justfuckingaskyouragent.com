@@ -6,7 +6,20 @@ An original, agent-agnostic rant for **justfuckingaskyouragent.com**. Plain HTML
 python3 -m http.server 4173 --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:4173. Deploy `index.html`, `style.css`, `script.js`, and `favicon.svg` to any static host. The domain is set in the canonical and Open Graph metadata; DNS and hosting still need to be configured.
+Open http://127.0.0.1:4173.
+
+## Deployment
+
+Railway builds the `Dockerfile` and serves the four static assets with Caddy. The server listens on Railway's `PORT` environment variable (8080 locally), compresses responses, and uses `/` as its deployment health check. Pushes to `main` deploy automatically through the connected GitHub repository.
+
+The public domain is https://justfuckingaskyouragent.com/. DNS is managed in Vercel and points to the Railway service in the `main` project.
+
+To run the production container locally:
+
+```sh
+docker build -t justfuckingaskyouragent .
+docker run --rm -p 8080:8080 justfuckingaskyouragent
+```
 
 ## Share links
 
