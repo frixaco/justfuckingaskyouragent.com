@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f2e9">
   <title>Just Fucking Ask Your Agent</title>
-  <meta name="description" content="You have a task. You have an agent. Somehow, you have a comparison spreadsheet. Close the tabs. Ask the fucking thing. Read the diff.">
+  <meta name="description" content="Your agent can write the email, explain the lease, decode your blood test and teach you Spanish. You texted Dave “quick question?” instead. Just fucking ask your agent. Then read what it says.">
   <link rel="canonical" href="https://justfuckingaskyouragent.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Just Fucking Ask Your Agent">
-  <meta property="og:description" content="Less model shopping. More doing the fucking thing. Yes, you still have to read the diff.">
+  <meta property="og:description" content="Before you DM Dave “quick question?” — just fucking ask your agent. Work, money, health, learning, life admin, and yes, how to exit vim.">
   <meta property="og:url" content="https://justfuckingaskyouragent.com/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
@@ -20,142 +20,296 @@
   <div class="page">
     <header class="masthead">
       <a class="wordmark" href="#">JFAYA<span aria-hidden="true">↗</span></a>
-      <span class="masthead-note">An intervention for overthinkers.</span>
-      <a href="#excuses">Your excuses <span aria-hidden="true">↓</span></a>
+      <span class="masthead-note">An intervention for people who start every DM with “quick question.”</span>
+      <a class="masthead-excuses" href="#excuses">Your excuses <span aria-hidden="true">↓</span></a>
+      <a href="#send">Send to a Dave <span aria-hidden="true">↓</span></a>
     </header>
 
     <main id="main">
       <section class="hero" aria-labelledby="title">
-        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> A public service announcement</p>
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> <span id="eyebrow-text">A public service announcement</span></p>
         <h1 id="title">JUST FUCKING<br><span>ASK YOUR<br>AGENT.</span><span class="cursor" aria-hidden="true">_</span></h1>
+        <div class="ask-bar" id="ask-bar">
+          <p class="ask-line"><span class="prompt-chevron" aria-hidden="true">&gt;</span><span class="ask-text"><span id="ask-typed" aria-hidden="true">how do I make a pivot table</span><span class="ask-caret" aria-hidden="true"></span><span id="ask-sr" class="sr-only">For example: how do I make a pivot table</span></span></p>
+          <span class="ask-send" aria-hidden="true">↵</span>
+        </div>
+        <p id="ask-result" class="ask-result" hidden><span aria-hidden="true">↑</span> That’s it. That’s the whole fucking trick. Into the agent. Not into Slack.</p>
         <div class="hero-bottom">
-          <p>You have a task. You have an agent.<br>Somehow, you have a comparison spreadsheet.</p>
+          <p id="hero-lede">You have a question. You have an agent. It’s on your phone, in your browser, probably in your fridge by now. And you still texted Dave “quick question?” and then typed for nine straight minutes.</p>
           <a class="text-link" href="#the-point">Let’s fix that <span aria-hidden="true">↘</span></a>
         </div>
-        <div class="edition"><span>No. 001 / Close the fucking tabs</span><span>A short rant. A shorter solution.</span></div>
+        <div class="edition"><span>No. 001 / Stop DMing Dave</span><span>Reading time: longer than asking your agent.</span></div>
       </section>
 
       <div class="essay">
         <section id="the-point" class="chapter">
           <p class="section-number">01 / The fucking point</p>
           <h2>You could’ve asked it<br>by now.</h2>
-          <p>You opened a tab to find the best AI agent. Then a benchmark. Then a thread explaining why the benchmark is bullshit. Then a video of a man in a purple room telling you everything changed this morning.</p>
-          <p>It’s now lunchtime. The button is still off-center.</p>
-          <p><strong>Ask the fucking thing to fix the button.</strong></p>
-          <p>Give it the file. Tell it what’s wrong. Let it take a swing. You can reject the result. You can correct it. You can discover that doing it yourself was faster. All of those are more useful than becoming the world’s leading unpaid expert on model pricing.</p>
-          <p class="pullquote">Your backlog doesn’t give a shit<br>which model tops the leaderboard.</p>
+          <div class="searches" aria-label="Questions you asked other humans this week">
+            <p class="searches-title">Your “quick questions” this week</p>
+            <ol>
+              <li><q>how do I make a pivot table</q><span>→ Dave from Finance. <em>Dave has muted you.</em></span></li>
+              <li><q>does this email sound passive-aggressive?</q><span>→ Your work bestie, 4th time today. <em>It does. So did the last three.</em></span></li>
+              <li><q>what does ‘mildly elevated ALT’ mean, am I dying</q><span>→ Your one friend who’s a nurse. <em>She’s on a 12-hour shift. She’s always on a 12-hour shift.</em></span></li>
+              <li><q>what’s an ETF and why won’t anyone shut up about it</q><span>→ Your uncle. <em>He’s still talking. It’s been 40 minutes. He mentioned gold.</em></span></li>
+              <li><q>what can I make with 2 eggs, half an onion and rice</q><span>→ Your mom. <em>She sent a voice note. It’s six minutes long. The recipe starts at 4:50.</em></span></li>
+              <li><q>how do I tell my roommate his girlfriend basically lives here now</q><span>→ Reddit. <em>1.2k comments. Top one is a pun.</em></span></li>
+              <li><q>how do I exit vim</q><span>→ The senior dev. <em>Audible sigh. Over Zoom. While on mute, somehow.</em></span></li>
+              <li><q>what does our company actually do</q><span>→ Nobody. <em>You’ve worked there eight months. It’s too late to ask a human now.</em></span></li>
+            </ol>
+          </div>
+          <p>Eight questions. Eight humans with jobs, kids, and problems of their own. Eight answers ranging from “idk” to a six-minute voice note. Total time spent staring at “Dave is typing…”: most of your week.</p>
+          <p>Meanwhile, the thing that would’ve answered all eight — instantly, at 2am, without sighing — is sitting right there on your phone. You’ve used it twice: once to write a birthday message for your aunt, and once to ask if it’s secretly alive.</p>
+          <p>And by “agent” we mean whatever you’ve got. ChatGPT, Claude, Gemini, Copilot, the one in your terminal, the one your company bought and announced at an all-hands with the word “transformation.” That one. <strong>Ask the fucking thing.</strong></p>
+          <p class="pullquote">Dave doesn’t know either.<br>Dave asked <em>his</em> agent and pasted you the answer.</p>
+          <p class="caption">That’s why his reply started with “Great question!” Dave has never said “great question” in his life.</p>
+        </section>
+
+        <section class="chapter">
+          <p class="section-number">02 / Meanwhile, at 2am</p>
+          <h2>Everywhere except<br>the obvious place.</h2>
+          <p>Your left eye has been twitching for three days. Let’s see how tonight goes.</p>
+          <ol class="detour">
+            <li><span>21:04</span>Searched it. Top result: an ad for magnesium gummies. Second: a forum where every reply is either “stress lol” or “brain tumor.”</li>
+            <li><span>21:15</span>WebMD. You now have nine conditions. Two of them are tropical. You have never left the country.</li>
+            <li><span>21:31</span>Asked the group chat. Two “lol”s, one “mine does that too,” a frog sticker, and Jess sharing an article about blue light from 2018.</li>
+            <li><span>21:48</span>TikTok. A man in a parked car says it’s seed oils. 1.2M likes. He sells a course. The course is also about seed oils.</li>
+            <li><span>22:20</span>Reddit. 140 replies. One verified doctor, answering someone else’s question. You read it anyway.</li>
+            <li><span>23:05</span>Called your mom. She says it’s because you don’t wear a jacket. You can’t prove she’s wrong.</li>
+            <li><span>00:12</span>Drafted your will in the Notes app. Left the PS5 to Dave.</li>
+            <li class="win"><span>00:14</span>Asked your agent. It asked how much you’d slept (four hours), how much coffee you’d had (five cups) and your screen time (yes). Said it’s very likely the boring trio — stress, caffeine, no sleep — listed the actual signs that mean “see a doctor,” and told you to go to bed. You did not go to bed. But you could have.</li>
+          </ol>
+          <p>You didn’t need nine opinions and a Notes-app will. You needed to type one sentence into the app that’s been on your home screen since 2023, right between the meditation app you never open and the language app with the threatening owl.</p>
+        </section>
+
+        <section class="chapter">
+          <p class="section-number">03 / Not just for nerds</p>
+          <h2>It’s not just for<br>fucking code.</h2>
+          <p>You think it’s for programmers and cover letters. It’s for the entire pile of shit you’ve been avoiding since March.</p>
+          <div class="asks">
+            <div class="ask-card">
+              <h3>Work <small>The 9-to-5 hostage situation</small></h3>
+              <ul>
+                <li>“Summarize this 94-message thread I got tagged in on message 93.”</li>
+                <li>“Turn my unhinged rant into an email HR would frame.”</li>
+                <li>“What did my manager mean by ‘let’s take this offline’? Am I fired?”</li>
+                <li>“Write my self-review so it sounds like I did things.”</li>
+              </ul>
+            </div>
+            <div class="ask-card">
+              <h3>Money &amp; paperwork <small>Adulting, unfortunately</small></h3>
+              <ul>
+                <li>“Explain this lease before I sign it. I’m signing it Thursday.”</li>
+                <li>“Find every subscription on this statement I forgot I’m paying for.”</li>
+                <li>“Write a complaint to the airline. Polite, but with lawyer energy.”</li>
+                <li>“Is this ‘free trial’ going to charge me $89 on Tuesday?”</li>
+              </ul>
+            </div>
+            <div class="ask-card">
+              <h3>Health <small>Not a doctor. Better than TikTok.</small></h3>
+              <ul>
+                <li>“Translate my blood test results out of hieroglyphics.”</li>
+                <li>“What should I ask in my seven-minute doctor’s appointment?”</li>
+                <li>“Make a workout plan for someone whose cardio is walking to the fridge.”</li>
+                <li>“Is this a ‘sleep it off’ thing or a ‘see someone’ thing?”</li>
+              </ul>
+            </div>
+            <div class="ask-card">
+              <h3>Learning <small>Without a $400 course</small></h3>
+              <ul>
+                <li>“Explain inflation like I’m 5. Now like I’m 15. Now like my uncle is in the room.”</li>
+                <li>“Quiz me until I actually get it. Don’t be nice about it.”</li>
+                <li>“Teach me enough Spanish to order food without pointing.”</li>
+                <li>“Summarize the book I’m pretending I read for book club.”</li>
+              </ul>
+            </div>
+            <div class="ask-card">
+              <h3>Life &amp; advice <small>Cheaper than therapy, worse than therapy</small></h3>
+              <ul>
+                <li>“How do I tell my roommate his girlfriend now technically lives here?”</li>
+                <li>“Help me reply to ‘we need to talk’ without passing out.”</li>
+                <li>“Am I the asshole? Be honest. Not Reddit honest.”</li>
+                <li>“What do I cook with two eggs, half an onion and despair?”</li>
+              </ul>
+            </div>
+            <div class="ask-card">
+              <h3>Tech support <small>For you, and your dad</small></h3>
+              <ul>
+                <li>“Walk my dad through fixing the printer. Slowly. He’s on speaker.”</li>
+                <li>“Write the Excel formula that does the thing.”</li>
+                <li>“Why does my laptop sound like it’s about to take off?”</li>
+                <li>“How do I exit vim.” <small>(No question mark. You’re past that.)</small></li>
+              </ul>
+            </div>
+          </div>
+          <p>Rule of thumb: if you were about to open thirty tabs, ask the group chat, or text your one friend who’s a nurse — that was an agent-shaped question.</p>
         </section>
 
         <section id="ask" class="chapter">
-          <p class="section-number">02 / The advanced workflow</p>
+          <p class="section-number">04 / The advanced workflow</p>
           <h2>Type a fucking sentence.</h2>
-          <p>No sacred incantation. No “act as a world-class 10× principal wizard.” Describe the job like you’re asking a competent colleague who has absolutely none of the context in your head.</p>
+          <p>No secret prompts. No “Act as a world-class Harvard-educated McKinsey CEO, my grandma will die if you fail.” Describe what you need like you’re asking a smart friend who has zero context about your life. Because it has zero context about your life.</p>
           <div class="prompt-box">
             <div class="prompt-toolbar">
               <label for="task">I need to</label>
               <select id="task">
-                <option value="bug">fix a bug</option>
-                <option value="code">understand this code</option>
-                <option value="feature">build a small feature</option>
-                <option value="research">research a decision</option>
-                <option value="admin">deal with boring shit</option>
+                <option value="email">write the email I’ve avoided for three days</option>
+                <option value="meeting">survive a meeting that should’ve been an email</option>
+                <option value="admin">understand adult paperwork</option>
+                <option value="health">understand what my doctor said</option>
+                <option value="learn">learn something without a $400 course</option>
+                <option value="advice">get advice without starting a group chat war</option>
+                <option value="decide">pick a thing without 40 tabs of reviews</option>
+                <option value="cook">make dinner out of whatever’s in the fridge</option>
+                <option value="bug">fix a bug (fine, nerd)</option>
               </select>
-              <span class="prompt-marker" aria-hidden="true">↙ Start here</span>
+              <span class="prompt-marker" aria-hidden="true">↙ Pick your poison</span>
             </div>
-            <div class="prompt-content"><span class="prompt-chevron" aria-hidden="true">&gt;</span><p id="prompt-text">Help me fix this bug. Expected: [what should happen]. Actual: [what happens]. Reproduce it, find the cause, and make the smallest fix. Run the relevant checks. Show me what changed and anything you couldn’t verify.</p></div>
-            <div class="prompt-footer"><span>Fill in the blanks. Attach the context.</span><button id="copy-prompt" type="button" hidden>Copy the fucking prompt <span aria-hidden="true">↗</span></button></div>
+            <div class="prompt-content"><span class="prompt-chevron" aria-hidden="true">&gt;</span><p id="prompt-text">Help me write an email to [who] about [the thing]. I want them to [the outcome I need]. Tone: [polite / firm / “per my last email”]. Under 120 words. No corporate filler, and don’t start with “I hope this email finds you well.” Here’s the context: [paste the thread or my notes].</p></div>
+            <div class="prompt-footer"><span>Fill in the brackets. Paste the actual context.</span><button id="copy-prompt" type="button" hidden>Copy the fucking prompt <span aria-hidden="true">↗</span></button></div>
             <p id="copy-status" class="copy-status" role="status"></p>
           </div>
-          <noscript><p>JavaScript is off. Excellent commitment to the bit. Copy the prompt above by hand.</p></noscript>
-          <p class="caption">That’s a prompt. You are now qualified to close the prompt-engineering tutorial.</p>
+          <noscript><p>JavaScript is off. Bold. Copy the prompt above by hand like a medieval monk.</p></noscript>
+          <p class="caption">That’s a prompt. You can now unfollow the guy selling “1,000 ChatGPT Prompts That Will 10× Your Life” for $49. He’s filming in a rented Lambo. It’s not his.</p>
         </section>
 
         <section class="chapter">
-          <p class="section-number">03 / Give it something to work with</p>
+          <p class="section-number">05 / Give it something to work with</p>
           <h2>It can’t read your<br>fucking mind.</h2>
-          <p>You typed “it’s broken” into an empty chat and expected a diagnosis. Broken <em>what</em>, Sherlock? The build? The layout? Your relationship with deadlines?</p>
-          <div class="prompt-diff" aria-label="A vague request compared with a useful request">
-            <p class="bad-prompt"><span aria-hidden="true">−</span><span><span class="sr-only">Vague request: </span>make it better</span></p>
-            <p class="good-prompt"><span aria-hidden="true">+</span><span><span class="sr-only">Useful request: </span>The navigation overlaps the logo at 375px. Fix the mobile layout. Keep the desktop design. Check both sizes.</span></p>
+          <p>You typed “make it better” and expected magic. Better <em>how</em>, Sherlock? Shorter? Nicer? Less likely to get you fired? You wouldn’t walk into a doctor’s office and just say “ow.”</p>
+          <div class="prompt-diff" aria-label="Vague requests compared with useful requests">
+            <div class="diff-pair">
+              <p class="bad-prompt"><span aria-hidden="true">−</span><span><span class="sr-only">Vague request: </span>make this email better</span></p>
+              <p class="good-prompt"><span aria-hidden="true">+</span><span><span class="sr-only">Useful request: </span>Rewrite this email to my landlord about the broken heater. Firm but polite. Mention I first reported it on March 3. Under 120 words.</span></p>
+            </div>
+            <div class="diff-pair">
+              <p class="bad-prompt"><span aria-hidden="true">−</span><span><span class="sr-only">Vague request: </span>am i dying</span></p>
+              <p class="good-prompt"><span aria-hidden="true">+</span><span><span class="sr-only">Useful request: </span>Headache behind my left eye for 3 days, worse at night. I sleep 5 hours and drink 4 coffees. Likely causes? What signs mean I should see a doctor today?</span></p>
+            </div>
+            <div class="diff-pair">
+              <p class="bad-prompt"><span aria-hidden="true">−</span><span><span class="sr-only">Vague request: </span>fix it. no mistakes.</span></p>
+              <p class="good-prompt"><span aria-hidden="true">+</span><span><span class="sr-only">Useful request: </span>The menu overlaps the logo on phones. Fix the mobile layout, keep desktop the same, check both.</span></p>
+            </div>
           </div>
-          <p>Tell it <strong>what you want, what it can use, what it must leave alone, and what “done” looks like.</strong> Files. Error messages. A screenshot with the actual problem in it. The boring details are the good prompt.</p>
-          <p>And if it can inspect your project, let it inspect your project. You don’t need to personally ferry every line of code between two windows like a clipboard with health insurance.</p>
+          <p>Tell it <strong>what you want, what you’ve got, what to leave alone, and what “done” looks like.</strong> Give it the actual thing — the email thread, the PDF, the full error message — not a blurry photo of your monitor taken at a 45° angle with your thumb in it.</p>
+          <p>And if it asks you a clarifying question, answer it. That’s not it being difficult. That’s it already being better at this than Dave.</p>
         </section>
 
         <section class="chapter">
-          <p class="section-number">04 / Congratulations on your new hobby</p>
-          <h2>You built a committee.<br>You needed a script.</h2>
-          <p>A planner agent. A researcher agent. An architect agent. A critic agent to critique the architect agent. A supervisor to ask why nobody has written the fucking script.</p>
+          <p class="section-number">06 / Congratulations on your new hobby</p>
+          <h2>You’ve done everything<br>except ask it.</h2>
+          <p>You watched a three-hour podcast about AGI. You bought “1,000 Mega Prompts” from a LinkedIn guy whose banner says “Helping founders 10× with AI.” You have ChatGPT, Claude, Gemini, Perplexity, and a Chrome extension called “GeniusAI Pro Max” that is definitely reading your email. You built a Notion dashboard to compare them.</p>
           <div class="committee" aria-label="Your overcomplicated workflow">
-            <span>Planner</span><span aria-hidden="true">→</span><span>Architect</span><span aria-hidden="true">→</span><span>Critic</span><span aria-hidden="true">→</span><strong>No fucking script</strong>
+            <span>3-hour AGI podcast</span><span aria-hidden="true">→</span><span>Prompt pack</span><span aria-hidden="true">→</span><span>Compared 6 chatbots</span><span aria-hidden="true">→</span><span>Notion dashboard</span><span aria-hidden="true">→</span><strong>Email still not sent</strong>
           </div>
-          <p>You’ve recreated a middle-management department in your terminal. It has a token budget and no deliverables.</p>
-          <p>Start with one agent and one clear task. Add the elaborate setup when you can point at the problem it solves. Your <code>AGENTS.md</code> should not need its own onboarding program.</p>
+          <p>And you, in the back, with fourteen MCP servers and a 900-line <code>AGENTS.md</code> that opens with “You are a senior engineer who NEVER makes mistakes.” It makes mistakes. It read line one and skimmed the other 899. Same as you.</p>
+          <p>Pick one. Give it one real task. Today. Add the fancy shit when you can name the exact problem it fixes. “I saw a thread” is not a problem.</p>
         </section>
 
         <section id="excuses" class="chapter excuses">
-          <p class="section-number">05 / The objection department</p>
+          <p class="section-number">07 / The objection department</p>
           <h2>Yes, but—<br><em>oh my fucking god.</em></h2>
           <p>Pick the thing you were about to say.</p>
           <details>
-            <summary>“But which agent is the best?”<span aria-hidden="true">+</span></summary>
-            <div><p>Try the one you already have access to, on a real task you can judge. Did it help? Where did it fail? There’s your useful comparison.</p><p>You’re fixing a form, not choosing a bloodline. You can use a different one tomorrow.</p></div>
+            <summary>“But I don’t want to bother it.”<span aria-hidden="true">+</span></summary>
+            <div><p>It’s a computer, you sweet summer child. It has no calendar. It doesn’t sigh. It won’t leave you on read, and it will never once say “per my last message.”</p><p>You bother Dave eleven times a day, and Dave has a family. Ask the robot the same dumb question forty times. It’ll answer the fortieth like it’s the first, and it won’t bring it up at lunch.</p></div>
           </details>
           <details>
-            <summary>“But it hallucinates.”<span aria-hidden="true">+</span></summary>
-            <div><p>Yes. It can invent an API with the confidence of a man explaining your own job to you. Ask for evidence. Open the sources. Run the code. Check the result.</p><p>“The agent said it works” is a sentence. A passing check is evidence. Learn the fucking difference.</p></div>
+            <summary>“But it makes stuff up.”<span aria-hidden="true">+</span></summary>
+            <div><p>Sometimes, yes, with the confidence of a man explaining your own job to you. So does your uncle, and you still let him do crypto at Christmas dinner.</p><p>Ask for sources. Click them. Double-check anything involving money, medicine, law, or your boss. “It sounded really sure” is not evidence. It wasn’t for your uncle either.</p></div>
+          </details>
+          <details>
+            <summary>“But it’s not a doctor.”<span aria-hidden="true">+</span></summary>
+            <div><p>Correct! Neither is the guy on TikTok, and you bought his sea moss.</p><p>Use it to translate the jargon, prep questions for your seven-minute appointment, and figure out whether this is “drink water and sleep” or “go get that looked at.” Don’t use it for dosing decisions or instead of the actual doctor. And if it’s chest pain, trouble breathing, or anything that feels like an emergency: close this tab and call emergency services. That part isn’t a bit.</p></div>
+          </details>
+          <details>
+            <summary>“But I’ll get dumber.”<span aria-hidden="true">+</span></summary>
+            <div><p>You haven’t memorized a phone number since 2009, and you can’t find north without a blue dot. That ship has sailed, Magellan.</p><p>Use it to learn, not to skip learning. Ask it to explain, then quiz you, then grade your answer. Make it the annoying tutor, not the kid who lets you copy their homework.</p></div>
+          </details>
+          <details>
+            <summary>“But it’ll take my job.”<span aria-hidden="true">+</span></summary>
+            <div><p>It just recommended a restaurant that closed in 2019. With total confidence. Your job is fine.</p><p>The real threat is the coworker who asks it things, finishes by four, and goes home. That guy is fucking dangerous.</p></div>
+          </details>
+          <details>
+            <summary>“But which one is the best?”<span aria-hidden="true">+</span></summary>
+            <div><p>The one you already have open. Seriously. There’ll be a new “best” one next Tuesday, announced with a chart that has no y-axis.</p><p>You’re writing an email, not picking a religion.</p></div>
+          </details>
+          <details>
+            <summary>“But my stuff is private.”<span aria-hidden="true">+</span></summary>
+            <div><p>Fair, and good instinct. Don’t paste passwords, your company’s secret sauce, or your entire medical history into whatever has a shiny input box. Check what your work allows, and use that.</p><p>(Concern noted from the person who gave their face to an aging-filter app in 2019.)</p></div>
+          </details>
+          <details>
+            <summary>“But it writes like a LinkedIn post.”<span aria-hidden="true">+</span></summary>
+            <div><p>Then tell it not to. “Write like a tired human. Short sentences. No ‘delve.’ No ‘I hope this finds you well.’ No ‘It’s not just X — it’s Y.’” It’ll listen. Mostly.</p><p>It’s not the agent’s fault you never mentioned you hate fun.</p></div>
           </details>
           <details>
             <summary>“But I tried it once and it sucked.”<span aria-hidden="true">+</span></summary>
-            <div><p>Maybe it did. Give it a bounded task and enough context, then judge that result. If you’re still spending more time correcting it than it saves, do the task yourself.</p><p>You’re allowed to use a tool without defending it on the internet. Incredible new feature of being an adult.</p></div>
+            <div><p>You typed “write something good” in 2023 and got something mid. Garbage in, LinkedIn post out.</p><p>Try a real task with real context. If it still wastes your time, stop using it. You don’t have to defend a chatbot on the internet. Incredible perk of being an adult.</p></div>
           </details>
           <details>
-            <summary>“But I need to learn this myself.”<span aria-hidden="true">+</span></summary>
-            <div><p>Then ask for an explanation, a hint, or a review of your attempt. Tell it not to write the solution. Predict what the code does, then check your prediction.</p><p>Outsource the part you don’t need to practice. Keep the part you do. Your brain is still invited.</p></div>
-          </details>
-          <details>
-            <summary>“But my code is private.”<span aria-hidden="true">+</span></summary>
-            <div><p>That’s a constraint. Use a tool and data policy you’re allowed to use, or don’t share the code. Work with a stripped-down example if that’s permitted.</p><p>“Just ask” is not a request to paste the company’s secrets into whatever has a shiny input box.</p></div>
-          </details>
-          <details>
-            <summary>“But I need the perfect setup first.”<span aria-hidden="true">+</span></summary>
-            <div><p>Your agent has twelve integrations, six custom personas, and a color scheme called Midnight Productivity. You have not completed a task.</p><p>Give the default setup one actual job before you install a plugin to optimize the plugin that manages your plugins.</p></div>
-          </details>
-          <details>
-            <summary>“But it keeps overengineering everything.”<span aria-hidden="true">+</span></summary>
-            <div><p>Tell it to make the smallest useful change, reuse what exists, and avoid new dependencies unless they’re needed. Then enforce that when you review.</p><p>If you asked for a doorbell and got an event-driven visitor orchestration platform, send it the fuck back.</p></div>
-          </details>
-          <details>
-            <summary>“But I enjoy doing it by hand.”<span aria-hidden="true">+</span></summary>
-            <div><p>Then do it by hand. Seriously. Enjoying the work is a perfectly good reason.</p><p>This page is for the person avoiding a task while researching tools to do the task. If you’re happily doing the task, you have already beaten this website.</p></div>
+            <summary>“But I like doing things myself.”<span aria-hidden="true">+</span></summary>
+            <div><p>Then do it yourself. Seriously. Enjoying the work is a perfectly good reason.</p><p>This page is for the person on their ninth tab of “how to write a resignation letter that sounds chill.” If you’re happily doing the thing, you’ve already beaten this website.</p></div>
           </details>
         </section>
 
         <section class="chapter reality-check">
-          <p class="section-number">06 / Keep your brain switched on</p>
-          <h2>Ask your agent.<br><span>Read the fucking diff.</span></h2>
-          <p>“Accept all” is not a code review. It’s a surprise subscription to whatever happens next.</p>
-          <p>Look at what changed. Check that it solved the actual problem. Run the relevant tests. For research, follow the sources. For writing, read the words. For a spreadsheet, check the numbers.</p>
-          <p>Don’t hand it the keys to production because it said “Absolutely!” with convincing punctuation.</p>
-          <p><strong>Delegate the work. Keep the judgment.</strong> The task is yours even when the typing isn’t.</p>
+          <p class="section-number">08 / Keep your brain switched on</p>
+          <h2>Ask your agent.<br><span>Read the fucking answer.</span></h2>
+          <p>Copy, paste, send is not a workflow. It’s a hostage situation with extra steps. Play along at home:</p>
+          <ul class="bingo" aria-label="Agent bingo">
+            <li>“You’re absolutely right!”<small>(you were not)</small></li>
+            <li>“Great question!”<small>(it was not)</small></li>
+            <li>Used “delve” unprompted</li>
+            <li>14 bullet points for a yes/no question</li>
+            <li class="free">“I hope this email finds you well”<small>free space</small></li>
+            <li>Cited a source that 404s</li>
+            <li>“It’s not just an email — it’s a statement.”</li>
+            <li>“Fixed it ✅”<small>(it had not)</small></li>
+            <li>Told you to “consult a professional” about boiling an egg</li>
+          </ul>
+          <p>Read it before you send it. Open the sources before you quote them in a meeting. Check the numbers before they go in the board deck. And never, ever send your CEO an email that begins “Certainly! Here’s a professional email:”. It has happened. It will happen again. Don’t be the screenshot.</p>
+          <p><strong>Delegate the typing. Keep the judgment.</strong> “My agent said so” is the new “I saw it on Facebook.” Nobody respected that one either.</p>
+        </section>
+
+        <section id="send" class="chapter send">
+          <p class="section-number">09 / Spread the fucking word</p>
+          <h2>Know someone who<br>needs this? <em>Of course you do.</em></h2>
+          <p>The coworker who opens every DM with “hey” and then nothing for six minutes. Your dad and the printer. The friend who’s asked you to explain crypto four times. The group chat. You, three hours ago.</p>
+          <form id="share-form" class="share" hidden>
+            <div class="share-fields">
+              <label>Their name <input id="share-to" name="to" maxlength="40" placeholder="Dave" autocomplete="off"></label>
+              <label>Your name <input id="share-from" name="from" maxlength="40" placeholder="Leave blank, coward" autocomplete="off"></label>
+              <label class="wide">What did they ask you? <input id="share-q" name="q" maxlength="200" placeholder="how do I make a pivot table" autocomplete="off"></label>
+            </div>
+            <div class="share-output">
+              <output id="share-link" for="share-to share-from share-q" aria-live="off">https://justfuckingaskyouragent.com/</output>
+              <div class="share-actions">
+                <button type="submit">Copy the fucking link <span aria-hidden="true">↗</span></button>
+                <a id="share-preview" href="./" target="_blank" rel="noopener">Preview it <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+            <p id="share-status" class="copy-status" role="status"></p>
+          </form>
+          <noscript><p>JavaScript is off, so build it by hand like it’s 1997: <code>?to=Dave&amp;from=You&amp;q=how+do+I+make+a+pivot+table</code></p></noscript>
+          <p class="caption">They’ll see their name, your name, and their own question being typed into an agent in real time. Let Me Google That For You, but for this decade. Friendships may end. Productivity will not.</p>
         </section>
 
         <section class="chapter family">
-          <p class="section-number">07 / Meanwhile, elsewhere on the internet</p>
+          <p class="section-number">10 / Meanwhile, elsewhere on the internet</p>
           <h2>Everyone has a<br>fucking opinion.</h2>
-          <p><a href="https://justfuckingusehtml.com/">Use HTML.</a> <a href="https://justfuckingusereact.com/">Use React.</a> <a href="https://justfuckingusecss.com/">Use CSS.</a> <a href="https://justfuckingusetailwind.com/">Use Tailwind.</a> <a href="https://www.justfuckingusepostgres.com/">Use Postgres.</a> <a href="https://justfuckingusemicroservices.com/">Use microservices.</a> <a href="https://justfuckingstopalready.com/">Stop already.</a></p>
+          <p><a href="https://justfuckingusehtml.com/">Use HTML.</a> <a href="https://justfuckingusereact.com/">Use React.</a> <a href="https://justfuckingusecss.com/">Use CSS.</a> <a href="https://www.justfuckingusepostgres.com/">Use Postgres.</a> <a href="https://justfuckingusecron.com/">Use cron.</a> <a href="https://justfuckingusebrain.com/">Use your brain.</a> <a href="https://justfuckingstopalready.com/">Stop already.</a></p>
           <p>Somewhere, two developers are writing rival manifestos about how to render a rectangle. Both rectangles work. Neither developer has gone outside.</p>
-          <p>Let your agent read the existing project. Tell it the constraints. Have it explain the tradeoffs if there’s a real decision to make. Then pick something and get on with your fucking day.</p>
+          <p>Ask your agent. Use your brain. They’re not mutually exclusive, Kevin.</p>
           <a class="text-link" href="https://justfuckinguse.com/">Visit the entire dysfunctional family <span aria-hidden="true">↗</span></a>
         </section>
       </div>
 
       <section class="closing" aria-labelledby="closing-title">
-        <p class="eyebrow">You have reached the end of the procrastination.</p>
+        <p class="eyebrow">You have reached the end of the procrastination. Dave still hasn’t replied.</p>
         <h2 id="closing-title">THE TASK IS<br>STILL <span>FUCKING</span><br>THERE.</h2>
-        <p>Close this tab. Open your agent. Tell it what you need.</p>
+        <p>Close this tab. Open your agent. Type the sentence. Read what it says.</p>
         <a class="closing-link" href="#ask">Fine. Give me the prompt. <span aria-hidden="true">↗</span></a>
-        <p class="postscript">Yes, an agent built this website.<br>Someone finally fucking asked.</p>
+        <p class="postscript">Yes, an agent built this website.<br>Then a human told it “make it funnier,” which is exactly<br>the kind of prompt this page tells you not to write.<br>It worked anyway. Don’t get cocky.</p>
       </section>
     </main>
 
