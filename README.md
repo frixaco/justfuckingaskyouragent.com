@@ -10,7 +10,7 @@ Open http://127.0.0.1:4173.
 
 ## Deployment
 
-Railway builds the `Dockerfile` and serves the four static assets with Caddy. The server listens on Railway's `PORT` environment variable (8080 locally), compresses responses, and uses `/` as its deployment health check. Pushes to `main` deploy automatically through the connected GitHub repository.
+Railway automatically detects the `Dockerfile` and serves the four static assets with Caddy. The server listens on Railway's `PORT` environment variable (8080 locally) and compresses responses. The service's Railway settings use `/` as the deployment health check and restart on failure (up to three retries). Pushes to `main` deploy automatically through the connected GitHub repository.
 
 The public domain is https://justfuckingaskyouragent.com/. DNS is managed in Vercel and points to the Railway service in the `main` project.
 
